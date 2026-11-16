@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🌍 COP Daily Briefing | Climate Intelligence Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #06090f;
@@ -33,11 +33,9 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
-/* HEADER */
 .header {
-  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+  background: rgba(13, 17, 23, 0.95);
   border-bottom: 1px solid var(--border);
-  padding: 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -46,7 +44,7 @@ body {
 .header-top {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,42 +54,40 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 .logo-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, var(--green), var(--cyan));
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 0 20px rgba(46,160,67,0.3);
+  font-size: 24px;
 }
 .logo h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   background: linear-gradient(135deg, #fff, var(--green2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .logo span {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text2);
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   display: block;
 }
 .header-actions {
   display: flex;
   gap: 10px;
   align-items: center;
-  flex-wrap: wrap;
 }
 .btn {
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--text);
@@ -99,7 +95,7 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.2s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   text-decoration: none;
@@ -109,9 +105,7 @@ body {
   background: linear-gradient(135deg, var(--green), #1a7f37);
   border-color: var(--green);
   color: #fff;
-  font-weight: 600;
 }
-.btn-primary:hover { box-shadow: 0 0 20px rgba(46,160,67,0.4); }
 .btn-gdoc {
   background: linear-gradient(135deg, #1a73e8, #4285f4);
   border-color: #4285f4;
@@ -125,14 +119,13 @@ body {
   display: inline-block;
 }
 @keyframes pulse {
-  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(63,185,80,0.7); }
-  50% { opacity:0.7; box-shadow: 0 0 0 8px rgba(63,185,80,0); }
+  0%,100% { opacity:1; transform: scale(1); }
+  50% { opacity:0.4; transform: scale(1.2); }
 }
-/* STATS BAR */
 .stats-bar {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
-  padding: 12px 0;
+  padding: 10px 0;
 }
 .stats-inner {
   max-width: 1400px;
@@ -143,375 +136,84 @@ body {
   flex-wrap: wrap;
   gap: 10px;
 }
-.stat {
-  text-align: center;
-  padding: 4px 16px;
-}
-.stat-num {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--green2);
-}
-.stat-label {
-  font-size: 0.65rem;
-  color: var(--text2);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-/* SOURCE TICKER */
-.ticker {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-  padding: 8px 0;
-}
-.ticker-inner {
-  display: flex;
-  gap: 30px;
-  animation: scroll 30s linear infinite;
-  white-space: nowrap;
-  width: max-content;
-}
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.ticker-item {
-  font-size: 0.75rem;
-  color: var(--text2);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.ticker-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  display: inline-block;
-}
-  <!-- Google Doc Embed Box -->
-<div style="margin-top:40px; background:white; border-radius:16px; overflow:hidden;">
-  <h2 style="padding:15px; color:#333; font-size:1.2rem; background:#f0f0f0;">📄 Latest Google Doc Update</h2>
-  <iframe src="https://docs.google.com/document/d/আপনার_DOC_ID_এখানে/pub?embedded=true" 
-          style="width:100%; height:800px; border:none;"></iframe>
-</div>
-/* MAIN */
+.stat { text-align: center; }
+.stat-num { font-size: 1.2rem; font-weight: 800; color: var(--green2); }
+.stat-label { font-size: 0.65rem; color: var(--text2); text-transform: uppercase; }
 .main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
 }
-/* LOADING */
 .loading-overlay {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 .spinner {
-  width: 60px; height: 60px;
-  border: 4px solid var(--border);
+  width: 50px; height: 50px;
+  border: 3px solid var(--border);
   border-top-color: var(--green2);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 20px;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 15px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-.loading-overlay h2 { color: var(--text); margin-bottom: 8px; }
-.loading-overlay p { color: var(--text2); }
-.progress-bar {
-  width: 300px;
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--green), var(--cyan));
-  border-radius: 2px;
-  width: 0%;
-  transition: width 0.3s;
-}
-/* EXECUTIVE SUMMARY */
 .exec-summary {
   background: linear-gradient(135deg, rgba(46,160,67,0.08), rgba(57,210,192,0.05));
   border: 1px solid rgba(46,160,67,0.2);
-  border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 30px;
-  position: relative;
-  overflow: hidden;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
 }
-.exec-summary::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--green), var(--cyan), var(--blue));
-}
-.exec-summary h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  margin-bottom: 6px;
-  color: #fff;
-}
-.exec-date {
-  color: var(--green2);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  display: block;
-}
-.exec-text {
-  color: var(--text);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-/* TOP 7 HEADLINES */
+.exec-summary h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+.exec-date { color: var(--green2); font-size: 0.8rem; font-weight: 600; margin-bottom: 12px; display: block; }
 .top7 {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px;
-  margin-bottom: 30px;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
 }
-.top7 h2 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: var(--orange);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.top7 h2 { font-size: 1.2rem; color: var(--orange); margin-bottom: 16px; }
 .top7-item {
   display: flex;
-  gap: 14px;
-  padding: 14px 0;
+  gap: 12px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border);
-  align-items: flex-start;
 }
 .top7-item:last-child { border-bottom: none; }
 .top7-num {
-  width: 32px; height: 32px;
+  width: 28px; height: 28px;
   background: linear-gradient(135deg, var(--orange), var(--red));
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.85rem;
-  color: #fff;
-  flex-shrink: 0;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.8rem; color: #fff; flex-shrink: 0;
 }
-.top7-content h3 {
-  font-size: 0.95rem;
-  color: var(--text);
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-.top7-content h3 a {
-  color: var(--text);
-  text-decoration: none;
-}
+.top7-content h3 { font-size: 0.9rem; color: var(--text); }
+.top7-content h3 a { color: var(--text); text-decoration: none; }
 .top7-content h3 a:hover { color: var(--blue); }
-.top7-meta {
-  font-size: 0.75rem;
-  color: var(--text2);
-}
-.top7-source {
-  background: rgba(88,166,255,0.1);
-  color: var(--blue);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-/* SECTORS GRID */
-.sectors-header {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin: 40px 0 20px;
-  color: #fff;
-}
+.top7-source { background: rgba(88,166,255,0.1); color: var(--blue); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; }
+.sectors-header { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 30px 0 16px; color: #fff; }
 .sectors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
 }
 .sector-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  transition: all 0.2s;
-}
-.sector-card:hover {
-  border-color: var(--green);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-.sector-header {
-  padding: 18px 22px 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.sector-icon {
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-.sector-header h3 {
-  font-size: 1rem;
-  color: var(--text);
-}
-.sector-count {
-  margin-left: auto;
-  background: var(--bg);
-  padding: 3px 10px;
   border-radius: 12px;
-  font-size: 0.7rem;
-  color: var(--text2);
-  font-weight: 600;
+  padding: 16px;
 }
-.sector-bullets {
-  padding: 14px 22px 18px;
-  list-style: none;
-}
-.sector-bullets li {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(33,38,45,0.6);
-  font-size: 0.85rem;
-  color: var(--text);
-  display: flex;
-  gap: 10px;
-  line-height: 1.5;
-}
+.sector-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.sector-bullets { list-style: none; }
+.sector-bullets li { padding: 6px 0; border-bottom: 1px solid rgba(33,38,45,0.4); font-size: 0.82rem; display: flex; gap: 8px; }
 .sector-bullets li:last-child { border-bottom: none; }
-.bullet-num {
-  color: var(--text3);
-  font-weight: 700;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  min-width: 18px;
-}
-.bullet-source {
-  font-size: 0.65rem;
-  color: var(--text3);
-  display: block;
-  margin-top: 2px;
-}
-/* ALL ARTICLES */
-.all-articles {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px;
-  margin-bottom: 30px;
-}
-.all-articles h2 {
-  font-size: 1.2rem;
-  margin-bottom: 16px;
-  color: var(--text);
-}
-.article-list { list-style: none; }
-.article-item {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-.article-item:last-child { border-bottom: none; }
-.article-item a {
-  color: var(--blue);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.article-item a:hover { text-decoration: underline; }
-.article-src {
-  font-size: 0.7rem;
-  color: var(--text2);
-  background: var(--bg);
-  padding: 2px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-/* FOOTER */
-.footer {
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px 20px;
-  margin-top: 40px;
-}
-.footer-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-.footer h4 {
-  color: var(--text);
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-}
-.footer p, .footer a {
-  color: var(--text2);
-  font-size: 0.8rem;
-  line-height: 2;
-  text-decoration: none;
-}
-.footer a:hover { color: var(--green2); }
-.footer ul { list-style: none; }
-.footer-bottom {
-  max-width: 1400px;
-  margin: 30px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.75rem;
-  color: var(--text3);
-}
-/* ERROR */
-.error-box {
-  background: rgba(248,81,73,0.1);
-  border: 1px solid rgba(248,81,73,0.3);
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  color: var(--red);
-}
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .header-top { padding: 12px 16px; }
-  .logo h1 { font-size: 1.2rem; }
-  .main { padding: 16px; }
-  .sectors-grid { grid-template-columns: 1fr; }
-  .exec-summary { padding: 20px; }
-  .exec-summary h2 { font-size: 1.3rem; }
-  .stats-inner { gap: 6px; }
-  .stat { padding: 4px 8px; }
-  .stat-num { font-size: 1rem; }
-  .header-actions { width: 100%; justify-content: center; }
-}
-@media print {
-  .header, .stats-bar, .ticker, .footer, .btn { display: none !important; }
-  body { background: #fff; color: #000; }
-  .exec-summary, .top7, .sector-card, .all-articles {
-    border: 1px solid #ccc; background: #fff;
-  }
-}
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 30px 24px; text-align: center; font-size: 0.8rem; color: var(--text2); }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-top">
     <div class="logo">
@@ -522,577 +224,187 @@ body {
       </div>
     </div>
     <div class="header-actions">
-      <span class="btn" style="cursor:default;">
-        <span class="live-dot"></span> Live
-      </span>
-      <button class="btn btn-primary" onclick="async function let globalArticles = []; // সব নিউজ এখানে জমা হবে  async function fetchAllNews() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const status = document.getElementById("loading-status");      // শুরুতে ক্লিনিং   globalArticles = [];   content.innerHTML = "";    loading.style.display = "block";   content.style.display = "block"; // কন্টেন্ট এরিয়া আগেভাগেই ওপেন করে দিন    // ১০টি সোর্সকে আলাদা আলাদা ভাবে কল করা   RSS_SOURCES.forEach(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         const articles = parseRSS(xml, source.name);         if (articles.length > 0) {           // নতুন নিউজগুলো গ্লোবাল লিস্টে যোগ করা           articles.forEach(a => { a.sector = detectSector(a); });           globalArticles.push(...articles);                      // ডেট অনুযায়ী সাজানো           globalArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));                      // সাথে সাথে স্ক্রিনে নিউজ রেন্ডার করা (অপেক্ষা না করে)           renderBriefing(globalArticles);                      // অন্তত একটি সোর্স আসলে লোডিং মেসেজ ছোট করে ফেলা           loading.style.display = "none";           document.getElementById("stat-articles").textContent = globalArticles.length;         }       }     } catch (e) {       console.warn(`Failed: ${source.name}`);     }   });    // ৫ সেকেন্ড পর যদি কিছুই না আসে তবে স্যাম্পল ডাটা দেখানো   setTimeout(() => {     if (globalArticles.length === 0) {       renderBriefing(getSampleArticles());       loading.style.display = "none";     }   }, 5000); }() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const progress = document.getElementById("progress");      loading.style.display = "block";   content.style.display = "none";    // একসাথে সব সোর্স থেকে ডাটা আনার প্রমিস তৈরি করা   const fetchPromises = RSS_SOURCES.map(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         return parseRSS(xml, source.name);       }     } catch (e) {       console.warn(`Failed to fetch ${source.name}`);     }     return [];   });    // সব প্রমিস একসাথে রান করানো (Parallel)   const results = await Promise.all(fetchPromises);      // সব রেজাল্ট একটি লিস্টে জমা করা   let allArticles = [].concat(...results);    // যদি ডাটা না পায় তবে স্যাম্পল ডাটা দেখানো   if (allArticles.length === 0) allArticles = getSampleArticles();    // ক্যাটাগরি ও সর্টিং   allArticles.forEach(a => { a.sector = detectSector(a); });   allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));    renderBriefing(allArticles);    loading.style.display = "none";   content.style.display = "block";      // স্ট্যাটাস আপডেট   document.getElementById("stat-articles").textContent = allArticles.length; }()">
-        🔄 Refresh Now
-      </button>
-      <a class="btn btn-gdoc" id="gdoc-link"
-         href="https://docs.google.com/document/d/1hDenpnK2c266D4S5VOoVRyoeWmjZMcjP6iXSV_hw5vY/edit?usp=sharing"
-         target="_blank">
-        📄 Open Google Doc
-      </a>
+      <span class="btn" style="cursor:default;"><span class="live-dot"></span> Live</span>
+      <button class="btn btn-primary" onclick="loadNews(true)">🔄 Refresh</button>
+      <a class="btn btn-gdoc" id="gdoc-link" href="https://docs.google.com/document/d/YOUR_DOC_ID_HERE/edit?usp=sharing" target="_blank">📄 Google Doc</a>
     </div>
   </div>
 </header>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-num" id="stat-articles">--</div>
-      <div class="stat-label">Articles</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">10</div>
-      <div class="stat-label">Sources</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="stat-sectors">--</div>
-      <div class="stat-label">Sectors</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="stat-time">--</div>
-      <div class="stat-label">Last Update</div>
-    </div>
+    <div class="stat"><div class="stat-num" id="stat-articles">--</div><div class="stat-label">Articles</div></div>
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Sources</div></div>
+    <div class="stat"><div class="stat-num" id="stat-sectors">--</div><div class="stat-label">Sectors</div></div>
+    <div class="stat"><div class="stat-num" id="stat-time">--</div><div class="stat-label">Updated</div></div>
   </div>
 </div>
 
-<!-- SOURCE TICKER -->
-<div class="ticker">
-  <div class="ticker-inner" id="ticker">
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--blue)"></span>UNFCCC</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--purple)"></span>Carbon Brief</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--orange)"></span>Reuters</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--green)"></span>The Guardian</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--red)"></span>BBC</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--cyan)"></span>Climate Change News</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--yellow)"></span>WRI</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--pink)"></span>IISD ENB</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--blue)"></span>UNEP</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--green)"></span>UNFCCC COP 31</span>
-    <!-- duplicate for seamless scroll -->
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--blue)"></span>UNFCCC</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--purple)"></span>Carbon Brief</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--orange)"></span>Reuters</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--green)"></span>The Guardian</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--red)"></span>BBC</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--cyan)"></span>Climate Change News</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--yellow)"></span>WRI</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--pink)"></span>IISD ENB</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--blue)"></span>UNEP</span>
-    <span class="ticker-item"><span class="ticker-dot" style="background:var(--green)"></span>UNFCCC COP 31</span>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<main class="main" id="main-content">
+<main class="main">
   <div class="loading-overlay" id="loading">
     <div class="spinner"></div>
-    <h2>Fetching Climate Intelligence...</h2>
-    <p>Scanning 10 sources for the latest COP updates</p>
-    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-    <p id="loading-status" style="font-size:0.8rem; color:var(--text3);">Initializing...</p>
+    <h2>Loading Climate Intelligence...</h2>
+    <p style="color:var(--text2); font-size:0.85rem;">Fetching fast RSS feeds</p>
   </div>
   <div id="content" style="display:none;"></div>
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <h4>🌍 COP Daily Briefing</h4>
-      <p>Automated climate intelligence tracking COP negotiations across 10 major sources. Updated automatically.</p>
-    </div>
-    <div>
-      <h4>📰 Sources</h4>
-      <ul>
-        <li><a href="https://unfccc.int" target="_blank">UNFCCC</a></li>
-        <li><a href="https://www.carbonbrief.org" target="_blank">Carbon Brief</a></li>
-        <li><a href="https://www.reuters.com/sustainability/" target="_blank">Reuters</a></li>
-        <li><a href="https://www.theguardian.com/environment" target="_blank">The Guardian</a></li>
-        <li><a href="https://www.bbc.com/news/science-environment" target="_blank">BBC</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>🔗 More Sources</h4>
-      <ul>
-        <li><a href="https://www.climatechangenews.com" target="_blank">Climate Change News</a></li>
-        <li><a href="https://www.wri.org" target="_blank">WRI</a></li>
-        <li><a href="https://enb.iisd.org" target="_blank">IISD ENB</a></li>
-        <li><a href="https://www.unep.org" target="_blank">UNEP</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>📧 Contact</h4>
-      <p>hello.bridge.cet@gmail.com</p>
-      <p style="margin-top:8px;">
-        <a href="https://docs.google.com/document/d/1hDenpnK2c266D4S5VOoVRyoeWmjZMcjP6iXSV_hw5vY/edit?usp=sharing"
-           target="_blank" style="color:var(--blue);">
-          📄 View on Google Docs →
-        </a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Bridge CET | COP Daily Briefing | Open Source Climate Intelligence</p>
-  </div>
+  <p>© 2025 Bridge CET | COP Daily Briefing | Updated Automatically</p>
 </footer>
 
 <script>
-// =============================================
-// CONFIGURATION
-// =============================================
-
-// RSS FEEDS (these are public and free to use)
-const RSS_SOURCES = [
-  {
-    name: "The Guardian Environment",
-    url: "https://www.theguardian.com/environment/rss",
-    color: "var(--green)",
-    icon: "🟢"
-  },
-  {
-    name: "BBC Science & Environment",
-    url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
-    color: "var(--red)",
-    icon: "🔴"
-  },
-  {
-    name: "Carbon Brief",
-    url: "https://www.carbonbrief.org/feed/",
-    color: "var(--purple)",
-    icon: "🟣"
-  },
-  {
-    name: "UNEP News",
-    url: "https://www.unep.org/rss.xml",
-    color: "var(--blue)",
-    icon: "🔵"
-  },
-  {
-    name: "World Resources Institute",
-    url: "https://www.wri.org/rss.xml",
-    color: "var(--yellow)",
-    icon: "🟡"
-  },
-  {
-    name: "Climate Change News",
-    url: "https://www.climatechangenews.com/feed/",
-    color: "var(--cyan)",
-    icon: "🔷"
-  }
+const RSS_FEEDS = [
+  { name: "The Guardian", url: "https://www.theguardian.com/environment/rss" },
+  { name: "BBC News", url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml" },
+  { name: "Carbon Brief", url: "https://www.carbonbrief.org/feed/" },
+  { name: "UNEP", url: "https://www.unep.org/rss.xml" },
+  { name: "Climate Change News", url: "https://www.climatechangenews.com/feed/" }
 ];
 
-// SECTOR KEYWORDS for auto-categorization
-const SECTORS = {
-  "⚡ Energy": {
-    keywords: ["energy","renewable","solar","wind","fossil","coal","oil","gas",
-               "power","grid","electricity","nuclear","hydrogen","battery"],
-    color: "var(--yellow)", bg: "rgba(210,153,34,0.1)"
-  },
-  "💰 Climate Finance": {
-    keywords: ["finance","funding","investment","bank","green bond","carbon market",
-               "carbon credit","trillion","billion","economic","financial","money",
-               "cost","fund","debt","loan"],
-    color: "var(--green)", bg: "rgba(46,160,67,0.1)"
-  },
-  "🛡️ Adaptation": {
-    keywords: ["adaptation","resilience","flood","drought","sea level","vulnerable",
-               "disaster","extreme weather","infrastructure","heatwave","storm"],
-    color: "var(--blue)", bg: "rgba(88,166,255,0.1)"
-  },
-  "📉 Mitigation & Emissions": {
-    keywords: ["mitigation","emission","reduction","net zero","carbon neutral",
-               "decarboniz","greenhouse","ghg","co2","methane","pledge","target"],
-    color: "var(--red)", bg: "rgba(248,81,73,0.1)"
-  },
-  "💔 Loss & Damage": {
-    keywords: ["loss and damage","loss & damage","compensation","reparation",
-               "climate justice","vulnerable nations","small island"],
-    color: "var(--pink)", bg: "rgba(247,120,186,0.1)"
-  },
-  "🌳 Forests & Land": {
-    keywords: ["agriculture","farming","food","deforestation","forest","land use",
-               "biodiversity","ecosystem","nature","amazon","timber"],
-    color: "var(--green2)", bg: "rgba(63,185,80,0.1)"
-  },
-  "🚗 Transport": {
-    keywords: ["transport","electric vehicle","ev","aviation","shipping",
-               "mobility","car","automobile","suv"],
-    color: "var(--cyan)", bg: "rgba(57,210,192,0.1)"
-  },
-  "🔬 Technology": {
-    keywords: ["technology","innovation","ccs","carbon capture","hydrogen",
-               "battery","storage","digital","ai","artificial intelligence"],
-    color: "var(--purple)", bg: "rgba(188,140,255,0.1)"
-  },
-  "📜 Policy & Governance": {
-    keywords: ["policy","regulation","legislation","treaty","agreement","ndc",
-               "nationally determined","paris agreement","cop","negotiation",
-               "government","summit","g20","g7","un","eu"],
-    color: "var(--orange)", bg: "rgba(240,136,62,0.1)"
-  },
-  "🌊 Oceans": {
-    keywords: ["ocean","marine","coastal","fishing","coral","blue economy",
-               "sea","arctic","antarctic","ice","glacier"],
-    color: "var(--blue)", bg: "rgba(88,166,255,0.1)"
-  },
-  "🏥 Health": {
-    keywords: ["health","air quality","pollution","respiratory","disease",
-               "pandemic","heat death","mortality"],
-    color: "var(--red)", bg: "rgba(248,81,73,0.1)"
-  },
-  "✊ Youth & Society": {
-    keywords: ["youth","activist","protest","community","indigenous","gender",
-               "social","civil society","ngo","greta","movement"],
-    color: "var(--pink)", bg: "rgba(247,120,186,0.1)"
-  }
+const SECTOR_KEYWORDS = {
+  "⚡ Energy": ["energy","solar","wind","coal","oil","gas","power","renewable"],
+  "💰 Finance": ["finance","funding","bank","investment","money","dollar","market"],
+  "🛡️ Adaptation": ["adaptation","flood","drought","storm","resilience","climate"],
+  "📜 Policy & COP": ["policy","cop","un","agreement","negotiation","summit","ndc"],
+  "🌳 Nature & Forest": ["forest","nature","biodiversity","land","tree","amazon"]
 };
 
-// CORS proxies (fallbacks)
-const CORS_PROXIES = [
-  "https://api.allorigins.win/raw?url=",
-  "https://corsproxy.io/?",
-  "https://api.codetabs.com/v1/proxy?quest="
-];
+// ULTRA FAST RSS-TO-JSON FETCHING
+async function fetchFeed(feed) {
+  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`;
+  try {
+    const res = await fetch(apiUrl, { signal: AbortSignal.timeout(4000) });
+    if (res.ok) {
+      const data = await res.json();
+      if (data.status === 'ok' && data.items) {
+        return data.items.map(item => ({
+          title: item.title,
+          link: item.link,
+          pubDate: item.pubDate,
+          source: feed.name,
+          sector: detectSector(item.title)
+        }));
+      }
+    }
+  } catch(e) {}
+  return [];
+}
 
-// =============================================
-// RSS FETCHER
-// =============================================
-
-async function fetchWithProxy(url) {
-  for (const proxy of CORS_PROXIES) {
-    try {
-      const resp = await fetch(proxy + encodeURIComponent(url), {
-        signal: AbortSignal.timeout(10000)
-      });
-      if (resp.ok) return await resp.text();
-    } catch(e) { continue; }
+function detectSector(title) {
+  const t = title.toLowerCase();
+  for (const [sector, keywords] of Object.entries(SECTOR_KEYWORDS)) {
+    if (keywords.some(kw => t.includes(kw))) return sector;
   }
-  return null;
+  return "📜 Policy & COP";
 }
 
-function parseRSS(xmlText, sourceName) {
-  const parser = new DOMParser();
-  const xml = parser.parseFromString(xmlText, "text/xml");
-  const items = xml.querySelectorAll("item");
-  const articles = [];
-
-  items.forEach((item, i) => {
-    if (i >= 15) return; // max 15 per source
-    const title = item.querySelector("title")?.textContent?.trim() || "";
-    const link = item.querySelector("link")?.textContent?.trim() || "";
-    const desc = item.querySelector("description")?.textContent?.trim() || "";
-    const pubDate = item.querySelector("pubDate")?.textContent?.trim() || "";
-    const category = item.querySelector("category")?.textContent?.trim() || "";
-
-    // Clean HTML from description
-    const cleanDesc = desc.replace(/<[^>]*>/g, '').substring(0, 300);
-
-    if (title) {
-      articles.push({
-        title, link, description: cleanDesc,
-        pubDate, category, source: sourceName
-      });
-    }
-  });
-
-  return articles;
-}
-
-function detectSector(article) {
-  const text = (article.title + " " + article.description + " " + article.category).toLowerCase();
-  let bestSector = "📜 Policy & Governance";
-  let bestScore = 0;
-
-  for (const [sector, data] of Object.entries(SECTORS)) {
-    let score = 0;
-    for (const kw of data.keywords) {
-      if (text.includes(kw)) score++;
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      bestSector = sector;
-    }
-  }
-
-  return bestSector;
-}
-
-// =============================================
-// MAIN FETCH FUNCTION
-// =============================================
-
-async function let globalArticles = []; // সব নিউজ এখানে জমা হবে  async function fetchAllNews() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const status = document.getElementById("loading-status");      // শুরুতে ক্লিনিং   globalArticles = [];   content.innerHTML = "";    loading.style.display = "block";   content.style.display = "block"; // কন্টেন্ট এরিয়া আগেভাগেই ওপেন করে দিন    // ১০টি সোর্সকে আলাদা আলাদা ভাবে কল করা   RSS_SOURCES.forEach(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         const articles = parseRSS(xml, source.name);         if (articles.length > 0) {           // নতুন নিউজগুলো গ্লোবাল লিস্টে যোগ করা           articles.forEach(a => { a.sector = detectSector(a); });           globalArticles.push(...articles);                      // ডেট অনুযায়ী সাজানো           globalArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));                      // সাথে সাথে স্ক্রিনে নিউজ রেন্ডার করা (অপেক্ষা না করে)           renderBriefing(globalArticles);                      // অন্তত একটি সোর্স আসলে লোডিং মেসেজ ছোট করে ফেলা           loading.style.display = "none";           document.getElementById("stat-articles").textContent = globalArticles.length;         }       }     } catch (e) {       console.warn(`Failed: ${source.name}`);     }   });    // ৫ সেকেন্ড পর যদি কিছুই না আসে তবে স্যাম্পল ডাটা দেখানো   setTimeout(() => {     if (globalArticles.length === 0) {       renderBriefing(getSampleArticles());       loading.style.display = "none";     }   }, 5000); }() {
+async function loadNews(forceRefresh = false) {
   const loading = document.getElementById("loading");
   const content = document.getElementById("content");
-  const progress = document.getElementById("progress");
-  const status = document.getElementById("loading-status");
+
+  // CACHE FIRST Strategy for Instant Display (0 Sec)
+  const cached = localStorage.getItem("cop_news_data");
+  const cacheTime = localStorage.getItem("cop_news_time");
+  
+  if (!forceRefresh && cached && cacheTime && (Date.now() - cacheTime < 30 * 60 * 1000)) {
+    renderUI(JSON.parse(cached));
+    loading.style.display = "none";
+    content.style.display = "block";
+    return;
+  }
 
   loading.style.display = "block";
-  content.style.display = "none";
 
-  let allArticles = [];
-  let sourcesLoaded = 0;
+  // Parallel Fetching
+  const results = await Promise.all(RSS_FEEDS.map(fetchFeed));
+  let articles = results.flat();
 
-  for (const source of RSS_SOURCES) {
-    status.textContent = `Fetching ${source.name}...`;
-    progress.style.width = `${(sourcesLoaded / RSS_SOURCES.length) * 100}%`;
-
-    try {
-      const xml = await fetchWithProxy(source.url);
-      if (xml) {
-        const articles = parseRSS(xml, source.name);
-        allArticles.push(...articles);
-      }
-    } catch(e) {
-      console.warn(`Failed to fetch ${source.name}:`, e);
-    }
-
-    sourcesLoaded++;
-    progress.style.width = `${(sourcesLoaded / RSS_SOURCES.length) * 100}%`;
+  if (articles.length === 0) {
+    articles = getBackupArticles();
   }
 
-  // If no RSS worked, add sample data so the site isn't empty
-  if (allArticles.length === 0) {
-    allArticles = getSampleArticles();
-  }
+  // Deduplicate & Save Cache
+  articles = articles.filter((v,i,a)=>a.findIndex(v2=>(v2.title===v.title))===i);
+  localStorage.setItem("cop_news_data", JSON.stringify(articles));
+  localStorage.setItem("cop_news_time", Date.now().toString());
 
-  // Categorize
-  allArticles.forEach(a => { a.sector = detectSector(a); });
-
-  // Sort by date (newest first)
-  allArticles.sort((a, b) => {
-    try {
-      return new Date(b.pubDate) - new Date(a.pubDate);
-    } catch(e) { return 0; }
-  });
-
-  // Remove duplicates by title similarity
-  const seen = new Set();
-  allArticles = allArticles.filter(a => {
-    const key = a.title.toLowerCase().substring(0, 50);
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-
-  renderBriefing(allArticles);
-
+  renderUI(articles);
   loading.style.display = "none";
   content.style.display = "block";
-
-  // Update stats
-  document.getElementById("stat-articles").textContent = allArticles.length;
-  const sectorCount = new Set(allArticles.map(a => a.sector)).size;
-  document.getElementById("stat-sectors").textContent = sectorCount;
-  document.getElementById("stat-time").textContent =
-    new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
 }
 
-// =============================================
-// RENDER
-// =============================================
-
-function renderBriefing(articles) {
+function renderUI(articles) {
   const content = document.getElementById("content");
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('en-US', {
-    weekday:'long', year:'numeric', month:'long', day:'numeric'
-  });
-
-  // Group by sector
+  const top7 = articles.slice(0, 7);
+  
   const bySector = {};
   articles.forEach(a => {
     if (!bySector[a.sector]) bySector[a.sector] = [];
     bySector[a.sector].push(a);
   });
 
-  // Top 7 headlines
-  const top7 = articles.slice(0, 7);
-
-  // Executive summary
-  const topSources = [...new Set(articles.map(a => a.source))];
-  const topSectors = Object.keys(bySector).slice(0, 4);
-
-  let html = '';
-
-  // EXECUTIVE SUMMARY
-  html += `
+  let html = `
     <div class="exec-summary">
-      <h2>🌍 COP Daily Briefing</h2>
-      <span class="exec-date">📅 ${dateStr} | Auto-generated from ${articles.length} articles</span>
-      <div class="exec-text">
-        <p>Today's climate intelligence covers <strong>${articles.length} articles</strong>
-        from <strong>${topSources.length} major sources</strong> including
-        ${topSources.slice(0,3).join(', ')}${topSources.length > 3 ? ' and more' : ''}.</p>
-        <p>Key developments span across <strong>${topSectors.join(', ')}</strong>.
-        The most active areas of coverage today include the latest COP negotiation
-        updates, climate policy announcements, and sector-specific developments
-        in energy, finance, and adaptation.</p>
-        <p><em>This briefing is automatically updated. Click "Refresh Now" for
-        the latest data, or open the Google Doc for a shareable version.</em></p>
-      </div>
+      <h2>🌍 COP Daily Executive Summary</h2>
+      <span class="exec-date">📅 ${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}</span>
+      <p>Today's briefing consolidates key developments from <strong>${articles.length} news items</strong> across global climate negotiations, energy transitions, and finance frameworks.</p>
     </div>
+
+    <div class="top7">
+      <h2>🔝 Top 7 Headlines</h2>
   `;
 
-  // TOP 7 HEADLINES
-  html += `<div class="top7"><h2>🔝 Top 7 Headlines</h2>`;
-  top7.forEach((a, i) => {
+  top7.forEach((item, i) => {
     html += `
       <div class="top7-item">
         <div class="top7-num">${i+1}</div>
         <div class="top7-content">
-          <h3><a href="${a.link}" target="_blank">${a.title}</a></h3>
-          <div class="top7-meta">
-            <span class="top7-source">${a.source}</span>
-            ${a.pubDate ? ' · ' + timeAgo(a.pubDate) : ''}
-            ${a.sector ? ' · ' + a.sector : ''}
-          </div>
+          <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+          <div><span class="top7-source">${item.source}</span></div>
         </div>
       </div>
     `;
   });
-  html += `</div>`;
 
-  // SECTOR BREAKDOWN
-  html += `<h2 class="sectors-header">📊 Sector-by-Sector Breakdown</h2>`;
-  html += `<div class="sectors-grid">`;
+  html += `</div><h2 class="sectors-header">📊 Sector Breakdown</h2><div class="sectors-grid">`;
 
   for (const [sector, items] of Object.entries(bySector)) {
-    const sectorData = SECTORS[sector] || {color:"var(--text2)", bg:"var(--card)"};
-    const topItems = items.slice(0, 7);
-
     html += `
       <div class="sector-card">
-        <div class="sector-header">
-          <div class="sector-icon" style="background:${sectorData.bg}">
-            ${sector.split(' ')[0]}
-          </div>
-          <h3>${sector.substring(sector.indexOf(' ')+1)}</h3>
-          <span class="sector-count">${items.length} articles</span>
-        </div>
+        <div class="sector-header"><h3>${sector}</h3></div>
         <ul class="sector-bullets">
     `;
-
-    topItems.forEach((item, i) => {
+    items.slice(0, 5).forEach((art, idx) => {
       html += `
         <li>
-          <span class="bullet-num">${i+1}.</span>
-          <span>
-            <a href="${item.link}" target="_blank"
-               style="color:var(--text);text-decoration:none;">
-              ${item.title}
-            </a>
-            <span class="bullet-source">${item.source}</span>
-          </span>
+          <strong style="color:var(--text3)">${idx+1}.</strong>
+          <a href="${art.link}" target="_blank" style="color:var(--text);text-decoration:none;">${art.title}</a>
         </li>
       `;
     });
-
     html += `</ul></div>`;
   }
 
   html += `</div>`;
-
-  // ALL ARTICLES
-  html += `
-    <div class="all-articles">
-      <h2>📰 All Articles (${articles.length})</h2>
-      <ul class="article-list">
-  `;
-
-  articles.slice(0, 50).forEach(a => {
-    html += `
-      <li class="article-item">
-        <span class="article-src">${a.source}</span>
-        <a href="${a.link}" target="_blank">${a.title}</a>
-      </li>
-    `;
-  });
-
-  html += `</ul></div>`;
-
   content.innerHTML = html;
+
+  document.getElementById("stat-articles").textContent = articles.length;
+  document.getElementById("stat-sectors").textContent = Object.keys(bySector).length;
+  document.getElementById("stat-time").textContent = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
 }
 
-// =============================================
-// HELPERS
-// =============================================
-
-function timeAgo(dateStr) {
-  try {
-    const date = new Date(dateStr);
-    const seconds = Math.floor((new Date() - date) / 1000);
-    if (seconds < 60) return "just now";
-    if (seconds < 3600) return Math.floor(seconds/60) + "m ago";
-    if (seconds < 86400) return Math.floor(seconds/3600) + "h ago";
-    if (seconds < 604800) return Math.floor(seconds/86400) + "d ago";
-    return date.toLocaleDateString();
-  } catch(e) { return ""; }
-}
-
-function getSampleArticles() {
-  // Fallback sample data if RSS fetching fails
-  const samples = [
-    {title:"COP31 Preparations Intensify as Nations Submit Updated Climate Pledges",
-     link:"https://unfccc.int", description:"Countries are ramping up their nationally determined contributions ahead of the next Conference of Parties.",
-     pubDate: new Date().toISOString(), source:"UNFCCC", category:"COP"},
-    {title:"Global Carbon Emissions Hit Record High Despite Renewable Energy Boom",
-     link:"https://www.carbonbrief.org", description:"New analysis shows that fossil fuel emissions continue to rise even as clean energy deployment accelerates worldwide.",
-     pubDate: new Date(Date.now()-3600000).toISOString(), source:"Carbon Brief", category:"emissions"},
-    {title:"Climate Finance Gap Widens as Developing Nations Demand $1 Trillion Annually",
-     link:"https://www.reuters.com", description:"Negotiations over the new collective quantified goal on climate finance remain deadlocked.",
-     pubDate: new Date(Date.now()-7200000).toISOString(), source:"Reuters", category:"finance"},
-    {title:"Amazon Deforestation Drops 40% Under New Brazilian Enforcement Policies",
-     link:"https://www.theguardian.com/environment", description:"Satellite data confirms significant reduction in forest loss across the Brazilian Amazon.",
-     pubDate: new Date(Date.now()-10800000).toISOString(), source:"The Guardian", category:"forests"},
-    {title:"Small Island States Push for Binding Loss and Damage Fund at COP",
-     link:"https://www.climatechangenews.com", description:"AOSIS coalition demands operationalization of the loss and damage fund with guaranteed contributions.",
-     pubDate: new Date(Date.now()-14400000).toISOString(), source:"Climate Change News", category:"loss and damage"},
-    {title:"EU Carbon Border Tax Takes Effect, Reshaping Global Trade Patterns",
-     link:"https://www.bbc.com/news/science-environment", description:"The CBAM mechanism begins its transitional phase, affecting imports of steel, cement, and aluminum.",
-     pubDate: new Date(Date.now()-18000000).toISOString(), source:"BBC", category:"policy"},
-    {title:"Solar Energy Now Cheapest Power Source in 90% of World Markets",
-     link:"https://www.wri.org", description:"WRI report confirms solar PV has achieved cost parity or better across nearly all global electricity markets.",
-     pubDate: new Date(Date.now()-21600000).toISOString(), source:"WRI", category:"energy"},
-    {title:"Youth Climate Activists Stage Major Protest at UN Headquarters",
-     link:"https://www.theguardian.com/environment", description:"Thousands of young activists demand accelerated climate action and intergenerational equity.",
-     pubDate: new Date(Date.now()-25200000).toISOString(), source:"The Guardian", category:"youth"},
-    {title:"Ocean Temperatures Break Records for 14th Consecutive Month",
-     link:"https://www.bbc.com/news/science-environment", description:"Marine heatwaves threaten coral reefs and fisheries as ocean warming accelerates beyond projections.",
-     pubDate: new Date(Date.now()-28800000).toISOString(), source:"BBC", category:"ocean"},
-    {title:"Breakthrough in Green Hydrogen Production Could Slash Industrial Emissions",
-     link:"https://www.carbonbrief.org", description:"New electrolyzer technology achieves record efficiency, making green hydrogen competitive with fossil alternatives.",
-     pubDate: new Date(Date.now()-32400000).toISOString(), source:"Carbon Brief", category:"technology"},
-    {title:"Adaptation Funding Reaches $50 Billion but Falls Short of Needs",
-     link:"https://www.unep.org", description:"UNEP adaptation gap report highlights the growing disparity between funding and actual adaptation requirements.",
-     pubDate: new Date(Date.now()-36000000).toISOString(), source:"UNEP", category:"adaptation"},
-    {title:"Electric Vehicle Sales Surpass 20 Million Units Globally",
-     link:"https://www.reuters.com", description:"EV adoption accelerates as battery costs decline and charging infrastructure expands rapidly.",
-     pubDate: new Date(Date.now()-39600000).toISOString(), source:"Reuters", category:"transport"},
-    {title:"Air Pollution Deaths Linked to Climate Change Rise by 15%",
-     link:"https://www.bbc.com/news/science-environment", description:"WHO report connects worsening air quality to climate-driven wildfires and heat events.",
-     pubDate: new Date(Date.now()-43200000).toISOString(), source:"BBC", category:"health"},
-    {title:"IISD Analysis: Key Negotiation Texts Show Progress on Global Stocktake",
-     link:"https://enb.iisd.org", description:"Earth Negotiations Bulletin provides detailed analysis of the latest draft texts under negotiation.",
-     pubDate: new Date(Date.now()-46800000).toISOString(), source:"IISD ENB", category:"negotiation"}
+function getBackupArticles() {
+  return [
+    { title: "COP31 Preparations Intensify as Nations Draft New Pledges", link: "#", source: "UNFCCC", sector: "📜 Policy & COP" },
+    { title: "Global Renewable Energy Investment Reaches Record High", link: "#", source: "Carbon Brief", sector: "⚡ Energy" },
+    { title: "Developing Countries Urge Fast-Tracking of Loss and Damage Funds", link: "#", source: "Reuters", sector: "💰 Finance" },
+    { title: "Amazon Deforestation Drops Significantly Under New Policies", link: "#", source: "The Guardian", sector: "🌳 Nature & Forest" }
   ];
-  return samples;
 }
 
-// =============================================
-// AUTO-REFRESH
-// =============================================
-
-// Fetch on load
-let globalArticles = []; // সব নিউজ এখানে জমা হবে  async function fetchAllNews() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const status = document.getElementById("loading-status");      // শুরুতে ক্লিনিং   globalArticles = [];   content.innerHTML = "";    loading.style.display = "block";   content.style.display = "block"; // কন্টেন্ট এরিয়া আগেভাগেই ওপেন করে দিন    // ১০টি সোর্সকে আলাদা আলাদা ভাবে কল করা   RSS_SOURCES.forEach(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         const articles = parseRSS(xml, source.name);         if (articles.length > 0) {           // নতুন নিউজগুলো গ্লোবাল লিস্টে যোগ করা           articles.forEach(a => { a.sector = detectSector(a); });           globalArticles.push(...articles);                      // ডেট অনুযায়ী সাজানো           globalArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));                      // সাথে সাথে স্ক্রিনে নিউজ রেন্ডার করা (অপেক্ষা না করে)           renderBriefing(globalArticles);                      // অন্তত একটি সোর্স আসলে লোডিং মেসেজ ছোট করে ফেলা           loading.style.display = "none";           document.getElementById("stat-articles").textContent = globalArticles.length;         }       }     } catch (e) {       console.warn(`Failed: ${source.name}`);     }   });    // ৫ সেকেন্ড পর যদি কিছুই না আসে তবে স্যাম্পল ডাটা দেখানো   setTimeout(() => {     if (globalArticles.length === 0) {       renderBriefing(getSampleArticles());       loading.style.display = "none";     }   }, 5000); }();
-
-// Auto-refresh every 30 minutes
-setInterval(let globalArticles = []; // সব নিউজ এখানে জমা হবে  async function fetchAllNews() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const status = document.getElementById("loading-status");      // শুরুতে ক্লিনিং   globalArticles = [];   content.innerHTML = "";    loading.style.display = "block";   content.style.display = "block"; // কন্টেন্ট এরিয়া আগেভাগেই ওপেন করে দিন    // ১০টি সোর্সকে আলাদা আলাদা ভাবে কল করা   RSS_SOURCES.forEach(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         const articles = parseRSS(xml, source.name);         if (articles.length > 0) {           // নতুন নিউজগুলো গ্লোবাল লিস্টে যোগ করা           articles.forEach(a => { a.sector = detectSector(a); });           globalArticles.push(...articles);                      // ডেট অনুযায়ী সাজানো           globalArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));                      // সাথে সাথে স্ক্রিনে নিউজ রেন্ডার করা (অপেক্ষা না করে)           renderBriefing(globalArticles);                      // অন্তত একটি সোর্স আসলে লোডিং মেসেজ ছোট করে ফেলা           loading.style.display = "none";           document.getElementById("stat-articles").textContent = globalArticles.length;         }       }     } catch (e) {       console.warn(`Failed: ${source.name}`);     }   });    // ৫ সেকেন্ড পর যদি কিছুই না আসে তবে স্যাম্পল ডাটা দেখানো   setTimeout(() => {     if (globalArticles.length === 0) {       renderBriefing(getSampleArticles());       loading.style.display = "none";     }   }, 5000); }, 30 * 60 * 1000);
+// Start immediately
+loadNews();
 </script>
-
 </body>
 </html>
