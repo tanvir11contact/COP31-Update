@@ -525,7 +525,7 @@ body {
       <span class="btn" style="cursor:default;">
         <span class="live-dot"></span> Live
       </span>
-      <button class="btn btn-primary" onclick="fetchAllNews()">
+      <button class="btn btn-primary" onclick="async function fetchAllNews() {   const loading = document.getElementById("loading");   const content = document.getElementById("content");   const progress = document.getElementById("progress");      loading.style.display = "block";   content.style.display = "none";    // একসাথে সব সোর্স থেকে ডাটা আনার প্রমিস তৈরি করা   const fetchPromises = RSS_SOURCES.map(async (source) => {     try {       const xml = await fetchWithProxy(source.url);       if (xml) {         return parseRSS(xml, source.name);       }     } catch (e) {       console.warn(`Failed to fetch ${source.name}`);     }     return [];   });    // সব প্রমিস একসাথে রান করানো (Parallel)   const results = await Promise.all(fetchPromises);      // সব রেজাল্ট একটি লিস্টে জমা করা   let allArticles = [].concat(...results);    // যদি ডাটা না পায় তবে স্যাম্পল ডাটা দেখানো   if (allArticles.length === 0) allArticles = getSampleArticles();    // ক্যাটাগরি ও সর্টিং   allArticles.forEach(a => { a.sector = detectSector(a); });   allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));    renderBriefing(allArticles);    loading.style.display = "none";   content.style.display = "block";      // স্ট্যাটাস আপডেট   document.getElementById("stat-articles").textContent = allArticles.length; }()">
         🔄 Refresh Now
       </button>
       <a class="btn btn-gdoc" id="gdoc-link"
